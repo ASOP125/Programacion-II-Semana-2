@@ -1,4 +1,4 @@
-import java.util.Random;
+import java.util.Random; // Nota: Investigue que es  random para poder agregar valores aleatorios a mi programa
 
 public class GeneradorDatosDueno {
 
@@ -6,11 +6,12 @@ public class GeneradorDatosDueno {
         Dueno[] duenos = new Dueno[cantidad];
         Random random = new Random();
 
-        // Cree arreglos para poder usar los nombres de forma aleatoria y pueda darme 500 Dueños con nombres diferentes
+        // Cree arreglos para poder usar los nombres de forma aleatoria y pueda dar 500 Dueños con nombres diferentes es decir se asignaran nombres aleatoriamente
 
-        String[] nombres = {"Arleth", "María", "David", "Ana", "Luis", "Sofía", "Pedro", "Laura", "Diego", "Camila"};
-        String[] apellidos = {"Orozco", "Pérez", "López", "Martínez", "Rodríguez", "Gómez", "Hernández", "Morales", "Cruz", "Ramírez"};
+        String[] nombres = {"Arleth", "Celeste", "David", "Scarlet", "Sara", "Sofía", "Brenda", "Laura", "Jorge", "Camila"};
+        String[] apellidos = {"Orozco", "Pérez", "Paredes", "Martínez", "García ", "Gómez", "Hernández", "Morales", "Cruz", "Castañon"};
 
+        // For que recorre los arreglos antes creados y asi con el random asginar nombres al azar.
         for (int i = 0; i < cantidad; i++) {
             long id = i + 1;
 
@@ -19,10 +20,10 @@ public class GeneradorDatosDueno {
             String apellido = apellidos[random.nextInt(apellidos.length)];
             String nombreCompleto = nombre + " " + apellido;
 
-            // Teléfono aleatorio (8 dígitos)
+            // Teléfono aleatorio (8 dígitos) %08d es para poder asignar siempre 8 digitos al numero de telefono
             String telefono = "502-" + String.format("%08d", random.nextInt(100_000_000));
 
-            // Email aleatorio
+            // Email aleatorio y con un metodo de toLowercase para convertir a minuscula los nombres y apellidos para los emails aleatorios
             String email = nombre.toLowerCase() + apellido.toLowerCase() + (random.nextInt(1000) + 1) + "@correo.com";
 
             // Dirección aleatoria
@@ -34,3 +35,4 @@ public class GeneradorDatosDueno {
         return duenos;
     }
 }
+
