@@ -48,7 +48,7 @@ public class Main {
                 }
                 if (dueno != null) break;
             }
-
+            //Imprimir el dueño de la mascota
             System.out.println("Mascota: " + p.getNombre()
                     + " (" + p.getEspecie() + ")"
                     + " ➜ Dueño: " + (dueno != null ? dueno.getnombreCompleto() : "Sin dueño"));
@@ -87,7 +87,7 @@ public class Main {
 
 
 
-// Llenar top5
+// Llenar el top 5
         for (int i = 0; i < pacientes.length; i++) {
             Paciente actual = pacientes[i];
             for (int j = 0; j < 5; j++) {
@@ -119,3 +119,5 @@ public class Main {
         }
     }
 }
+
+
