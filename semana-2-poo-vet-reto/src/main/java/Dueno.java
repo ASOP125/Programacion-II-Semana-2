@@ -42,7 +42,7 @@ public class Dueno {
         setTelefono(telefono);
         setEmail(email);
         setDireccion(direccion);
-        this.mascotas = new Paciente[2]; // <--- inicializamos aquí
+        this.mascotas = new Paciente[2];// se  inicializa aqui para las mascotas
     }
 
     // Constructor reducido (valores por defecto)
@@ -50,16 +50,19 @@ public class Dueno {
         this(id, nombreCompleto, telefono, null, "Sin dirección");
     }
 
-    // Método resumen
+    //Metodo resumen
     public String resumen() {
         return "Dueño #" + id + " | " + nombreCompleto + " | Mascotas: " +
                 (mascotas != null ? mascotas.length : 0);
     }
 
-    // Método asignar mascota
+    //Metodo asignar una mascota
+    // index >= 0 && index < mascotas.length se asegura que el indice este dentro d elos limites validos del arreglo
     public void agregarMascota(Paciente mascota, int index) {
         if (mascotas != null && index >= 0 && index < mascotas.length) {
             this.mascotas[index] = mascota;
         }
     }
 }
+
+
